@@ -1,17 +1,12 @@
-# Covariant Factory
+# Contravariant List
 
-Simple snippet to show the use of covariance in C#.
+Simple snippet to show the use of contravariance in C#.
 
 ## Example
 
 ```cs
-ICovariantFactory<IAnimal> dogFactory = new CovariantFactory<Dog>();
-var dog = dogFactory.CreateInstance("Sharik", 2);
-dog.SayName();
-dog.SayAge();
-            
-ICovariantFactory<Dog> wolfFactory = new CovariantFactory<Wolf>();
-var wolf = wolfFactory.CreateInstance("Bamboo", 5);
-wolf.SayName();
-wolf.SayAge();
+IContravariantList<Wolf> list = new ContravariantList<IAnimal>();
+list.Push(new Wolf());
+list.Push(new Wolf());
+Console.WriteLine(list.Count);
 ```
